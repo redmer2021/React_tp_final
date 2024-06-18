@@ -12,7 +12,7 @@ function App() {
         <ChakraProvider>
             <NavBar/>
             <ItemListContainer
-                titulo={'CARRITO DE COMPRAS POTENCIADO'}
+                titulo='CARRITO DE COMPRAS POTENCIADO'
             />
         </ChakraProvider>
     </>

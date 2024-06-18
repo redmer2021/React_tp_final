@@ -1,6 +1,6 @@
 import { CartWidget } from "../CartWidget/CartWidget"
 import { Button, Menu, MenuButton,MenuList,MenuItem,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider, Heading } from '@chakra-ui/react'
-import { FaCartPlus, FaCaretDown } from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa";
 export const NavBar = () => {
   return (
     <>
@@ -19,11 +19,10 @@ export const NavBar = () => {
                         <MenuItem>Attend a Workshop</MenuItem>
                     </MenuList>
                 </Menu>
-                <FaCartPlus className="text-white w-[2rem] h-[2rem]" />
+                <CartWidget/>
             </div>
         </div>
 
-        <CartWidget/>
     </>
   )
 }
