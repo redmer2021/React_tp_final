@@ -1,38 +1,38 @@
-import { Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text } from "@chakra-ui/react"
+import ItemCount from "../ItemCount/ItemCount";
 
-const Item = ({nombre, descripcion, precio}) => {
+const formatPrice = (price) => {
+    return new Intl.NumberFormat('es-ES', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(price);
+  };
+
+const Item = ({nombre, descripcion, img, precio, stock}) => {
 
     return (
     <>
-        <Card maxW='sm'>
-        <CardBody>
-            <Image
-            src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-            alt='Green double couch with wooden legs'
-            borderRadius='lg'
-            />
-            <Stack mt='6' spacing='3'>
-            <Heading size='md'>{nombre}</Heading>
-            <Text>
-                {descripcion}
-            </Text>
-            <Text color='blue.600' fontSize='2xl'>
-                ${precio}
-            </Text>
-            </Stack>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-            <ButtonGroup spacing='2'>
-            <Button variant='solid' colorScheme='blue'>
-                Comprar
-            </Button>
-            <Button variant='ghost' colorScheme='blue'>
-                Agregar al Carrito
-            </Button>
-            </ButtonGroup>
-        </CardFooter>
-        </Card>
+        <div className="bg-slate-200 rounded-md shadow-md shadow-blue-300 hover:bg-slate-300">
+            <div className="flex flex-col">
+                <div className="bg-slate-400 rounded-t-md overflow-hidden">
+                    <img className="w-full object-cover rounded-t-md" src={img} alt="" />
+                </div>
+                <div className="text-[1rem] font-bold text-left pl-2 my-2">
+                    {nombre}
+                </div>
+                <div className="text-left text-sm h-[5.2rem] overflow-hidden px-2">
+                    {descripcion}
+                </div>
+                <div className="text-xl font-extrabold text-right pr-4 mt-2">
+                    $ {formatPrice(precio)}
+                </div>
+                <div className="flex space-x-2 mb-4 mt-8 justify-center">
+                    <button className="bg-blue-500 px-3 py-1 rounded-md hover:bg-blue-600 text-white">Ver Detalles</button>
+                    <ItemCount valorInicial={1} stock={stock} />
+                </div>
+            </div>
+        </div>
+        
     </>
   )
 }

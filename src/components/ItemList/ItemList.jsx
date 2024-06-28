@@ -4,7 +4,7 @@ import Item from "../Item/Item"
 const ItemList = ({productos}) => {
 
     return (
-        <Flex gap={6} wrap={"wrap"} align={"center"} justify={"center"}>
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 mt-4 gap-8 justify-center items-center">
             {
                 productos.map((p) => (
                     <Box key={p.id}>
@@ -12,7 +12,7 @@ const ItemList = ({productos}) => {
                     </Box>
                 ))
             }
-        </Flex>
+        </div>
     )
 }
 

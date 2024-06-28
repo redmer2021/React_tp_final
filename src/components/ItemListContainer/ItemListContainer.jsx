@@ -17,12 +17,8 @@ useEffect(() => {
   
 return (
     <>
-        <div className="flex justify-center mt-[2rem]">
-            <Flex direction={'column'} justify={'center'} align={"center"}>
-                <Heading className="text-2xl" >{titulo}</Heading>
-                <ItemList productos={productos}/>
-            </Flex>
-        </div>
+        <span className="text-3xl font-bold my-[2rem] flex justify-center text-center" >{titulo}</span>
+        <ItemList productos={productos}/>
     </>
   )
 }
