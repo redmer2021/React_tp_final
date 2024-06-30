@@ -1,14 +1,6 @@
-import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text } from "@chakra-ui/react"
-import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
-const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-ES', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(price);
-  };
-
-const Item = ({nombre, descripcion, img, precio, stock}) => {
+const Item = ({id, nombre, descripcion, img, precio, stock}) => {
 
     return (
     <>
@@ -24,11 +16,10 @@ const Item = ({nombre, descripcion, img, precio, stock}) => {
                     {descripcion}
                 </div>
                 <div className="text-xl font-extrabold text-right pr-4 mt-2">
-                    $ {formatPrice(precio)}
+                    ${precio}
                 </div>
                 <div className="flex space-x-2 mb-4 mt-8 justify-center">
-                    <button className="bg-blue-500 px-3 py-1 rounded-md hover:bg-blue-600 text-white">Ver Detalles</button>
-                    <ItemCount valorInicial={1} stock={stock} />
+                    <Link to={`/producto/${id}`} ><button className="bg-blue-500 px-3 py-1 rounded-md hover:bg-blue-600 text-white">Ver Detalles</button></Link>
                 </div>
             </div>
         </div>
