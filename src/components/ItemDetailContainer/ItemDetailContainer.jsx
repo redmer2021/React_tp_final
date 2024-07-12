@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getProductosPorId } from "../../data/bdPrue"
-import ItemDetail from "../ItemDetail"
 import {RingLoader } from "react-spinners"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../../config/firebase"
+import ItemDetail from "../ItemDetail/ItemDetail"
 
 
 export const ItemDetailContainer = () => {
@@ -12,11 +13,24 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         setCargando(true)
+        const getData = async () => {
 
-        getProductosPorId(idProd)
-            .then((data) => setProducto(data))
-            .catch((error) => console.log(error))
-            .finally(()=>setCargando(false))
+            const queryRef = doc(db, 'productos', idProd)
+            const response = await getDoc(queryRef)
+            const newItem = {
+                ...response.data(),
+                id: response.id
+            }
+            setProducto(newItem)
+            setCargando(false)
+        }
+
+        getData()
+
+        // getProductosPorId(idProd)
+        //     .then((data) => setProducto(data))
+        //     .catch((error) => console.log(error))
+        //     .finally(()=>setCargando(false))
     }, [])
 
     return (

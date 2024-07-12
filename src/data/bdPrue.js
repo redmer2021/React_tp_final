@@ -41,9 +41,9 @@ export const productos = [
     },
     {
       id: 5,
-      nombre: "Zapatillas",
+      nombre: "Zapatillas De Lona Pintadas A Mano Rick And Morty",
       precio: 14900,
-      categoria: "Zapatillas De Lona Pintadas A Mano Rick And Morty",
+      categoria: "Zapatillas",
       stock: 5,
       descripcion:
         "Zapatilla de lona reforzada. Pintada a mano con pintura de calidad.",
@@ -85,7 +85,7 @@ export const getProductos = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(productos)
-        }, 1000)
+        }, 300)
     })
 }
 
@@ -94,7 +94,7 @@ export const getProductosPorCategoria = (categoria) => {
         const productosFiltrados = productos.filter((prod) => prod.categoria === categoria)
         setTimeout(() => {
             resolve(productosFiltrados)
-        }, 1000);
+        }, 300);
     })
 }
 
@@ -103,6 +103,6 @@ export const getProductosPorId = (id) => {
         const producto = productos.find((prod) => prod.id === parseInt(id))
         setTimeout(() => {
             resolve(producto)
-        }, 1000);
+        }, 300);
     })
 }

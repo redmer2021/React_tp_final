@@ -5,9 +5,9 @@ const Item = ({id, nombre, descripcion, img, precio, stock}) => {
     return (
     <>
         <div className="bg-slate-200 rounded-md shadow-md shadow-blue-300 hover:bg-slate-300">
-            <div className="flex flex-col">
-                <div className="bg-slate-400 rounded-t-md overflow-hidden">
-                    <img className="w-full object-cover rounded-t-md" src={img} alt="" />
+            <div className="flex flex-col p-2">
+                <div className="overflow-hidden">
+                    <img className="w-full h-[20rem] object-contain" src={img} alt="" />
                 </div>
                 <div className="text-[1rem] font-bold text-left pl-2 my-2">
                     {nombre}
