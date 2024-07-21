@@ -20,7 +20,7 @@ const Cart = () => {
                 <div className="flex flex-col">
                     <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                            <div className="overflow-hidden">
+                            <div className="overflow-hidden ">
                                 <table className="min-w-full text-center text-sm font-light text-surface dark:text-white">
                                     <thead
                                         className="border-b border-neutral-200 bg-[#332D2D] font-medium text-white dark:border-white/10">
@@ -53,7 +53,7 @@ const Cart = () => {
                     </div>
                 </div>
     
-                <div className="flex flex-col items-end mt-2 space-y-2">
+                <div className="flex flex-col items-end mt-8 space-y-2 mr-4">
                     <span className="text-2xl font-bold text-right">Total General: { getTotalCarrito() } </span>
                     <Link to='/checkout'><button className="bg-blue-600 px-3 py-2 text-white w-auto rounded-md font-bold">Finalizar Compra</button></Link> 
                     <button className="bg-blue-600 px-3 py-2 text-white w-auto rounded-md font-bold" onClick={() => limpiarCarrito()}>Cancelar Compra</button>
