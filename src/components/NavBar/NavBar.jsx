@@ -1,5 +1,5 @@
 import { CartWidget } from "../CartWidget/CartWidget"
-import { Button, Menu, MenuButton,MenuList,MenuItem,MenuItemOption,MenuGroup,MenuOptionGroup,MenuDivider, Heading } from '@chakra-ui/react'
+import { Button, Menu, MenuButton,MenuList,MenuItem } from '@chakra-ui/react'
 import { FaCaretDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 export const NavBar = () => {

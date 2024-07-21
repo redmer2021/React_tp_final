@@ -9,6 +9,7 @@ import 'react-toastify/ReactToastify.css'
 import PageNoteFound from './components/PageNotFound/PageNoteFound'
 import { CartContextProvider } from './context/CartContext'
 import Cart from './components/Cart/Cart'
+import Checkout from './components/Checkout/Checkout'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -23,6 +24,7 @@ function App() {
                         <Route path='/categorias/:idCateg' element={ <ItemListContainer titulo='Pilchas baratas'/> } />
                         <Route path='/producto/:idProd' element={ <ItemDetailContainer/> } />
                         <Route path='/cart' element={ <Cart/> } />
+                        <Route path='/checkout' element={ <Checkout /> } />
                         <Route path='*' element={ <PageNoteFound /> } />
                     </Routes>
                 </BrowserRouter>

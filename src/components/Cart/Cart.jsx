@@ -55,7 +55,7 @@ const Cart = () => {
     
                 <div className="flex flex-col items-end mt-2 space-y-2">
                     <span className="text-2xl font-bold text-right">Total General: { getTotalCarrito() } </span>
-                    <button className="bg-blue-600 px-3 py-2 text-white w-auto rounded-md font-bold">Finalizar Compra</button>
+                    <Link to='/checkout'><button className="bg-blue-600 px-3 py-2 text-white w-auto rounded-md font-bold">Finalizar Compra</button></Link> 
                     <button className="bg-blue-600 px-3 py-2 text-white w-auto rounded-md font-bold" onClick={() => limpiarCarrito()}>Cancelar Compra</button>
                 </div>
             </div>

@@ -20,13 +20,12 @@ const ItemDetail = ({id, nombre, precio, stock, descripcion, img}) => {
         
         setProductosAgregados(cantidad)
 
-        //console.log(`Agregaste ${cantidad} artículos`)
-        //toast(`Agregaste ${cantidad} artículos`)
+        toast(`Agregaste ${cantidad} artículos`)
 
     }
 
     return (
-        <div className="container mx-auto w-[35rem] h-[35rem] grid grid-cols-1 mt-4 bg-slate-200 rounded-md shadow-md shadow-blue-300 mb-10">
+        <div className="container mx-auto w-[35rem] h-[35rem] grid grid-cols-1 mt-10 bg-slate-200 rounded-md shadow-md shadow-blue-300 mb-10">
             <div className="bg-slate-400 rounded-t-md overflow-hidden p-2 flex justify-center">
                 <img className="h-full rounded-md" src={img} alt="" />
             </div>

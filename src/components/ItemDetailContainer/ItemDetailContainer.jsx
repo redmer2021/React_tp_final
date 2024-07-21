@@ -26,11 +26,6 @@ export const ItemDetailContainer = () => {
         }
 
         getData()
-
-        // getProductosPorId(idProd)
-        //     .then((data) => setProducto(data))
-        //     .catch((error) => console.log(error))
-        //     .finally(()=>setCargando(false))
     }, [])
 
     return (

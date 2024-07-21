@@ -6,6 +6,8 @@ export const CartContextProvider = ({ children }) => {
     
     const [cart, setCart] = useState([])
 
+    const [nuevoId, setNuevoId] = useState('')
+
     const addItem = (productoAgregado, cantidad) => {
         const newItem = {
             ...productoAgregado, cantidad
@@ -32,6 +34,10 @@ export const CartContextProvider = ({ children }) => {
         setCart([])
     }
 
+    const idNuevoPedido = (nuevoId) => {
+        setNuevoId(nuevoId)
+    }
+
     const getCantidad = () => {
         let varTotal = 0
         cart.forEach((prod) => {
@@ -45,8 +51,6 @@ export const CartContextProvider = ({ children }) => {
         
         return varTotal
     }
-
-    //console.log(getTotalCarrito())
     
     return (
 
@@ -57,7 +61,9 @@ export const CartContextProvider = ({ children }) => {
                 eliminarProducto,
                 limpiarCarrito,
                 getCantidad,
-                getTotalCarrito
+                getTotalCarrito,
+                idNuevoPedido,
+                nuevoId
             }}>
             {children}
         </Context.Provider>
